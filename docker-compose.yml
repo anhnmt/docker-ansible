@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  kubespray:
+    container_name: kubespray
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: ghcr.io/anhnmt/docker-ansible:latest
+    command:
+      - /bin/bash
+      - -c
+      - |
+        tail -f /dev/null
