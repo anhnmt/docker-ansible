@@ -1,12 +1,15 @@
 version: '3.8'
 
 services:
-  kubespray:
-    container_name: kubespray
+  docker-ansible:
+    container_name: docker-ansible
     build:
       context: .
       dockerfile: ./Dockerfile
     image: ghcr.io/anhnmt/docker-ansible:latest
+    volumes:
+      - .:/app
+      - ~/.ssh/known_hosts:/root/.ssh/known_hosts
     command:
       - /bin/bash
       - -c
