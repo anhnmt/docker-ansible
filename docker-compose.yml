@@ -1,12 +1,14 @@
-version: '3.8'
+version: '3.9'
 
 services:
   docker-ansible:
     container_name: docker-ansible
+    image: ghcr.io/anhnmt/docker-ansible:latest
     build:
       context: .
       dockerfile: ./Dockerfile
-    image: ghcr.io/anhnmt/docker-ansible:latest
+      tags:
+        - anhnmt/docker-ansible:latest
     volumes:
       - .:/app
       - ~/.ssh/known_hosts:/root/.ssh/known_hosts
