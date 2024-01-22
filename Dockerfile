@@ -1,5 +1,5 @@
 # Use imutable image tags rather than mutable tags (like ubuntu:22.04)
-FROM ubuntu:jammy-20230308
+FROM ubuntu:jammy-20240111
 # Some tools like yamllint need this
 # Pip needs this as well at the moment to install ansible
 # (and potentially other packages)
@@ -12,6 +12,7 @@ WORKDIR /app
 RUN apt update -q \
     && apt install -yq --no-install-recommends \
        curl \
+       iputils-ping \
        python3 \
        python3-pip \
        sshpass \
