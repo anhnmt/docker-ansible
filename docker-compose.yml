@@ -7,8 +7,6 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-      tags:
-        - ghcr.io/anhnmt/docker-ansible:latest
     volumes:
       - .:/app
       - ~/.ssh/known_hosts:/root/.ssh/known_hosts
