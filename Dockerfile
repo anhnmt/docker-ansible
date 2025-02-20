@@ -23,6 +23,8 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     sshpass \
     vim \
     rsync \
+    iputils-ping \
+    telnet \
     openssh-client \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /var/log/*
