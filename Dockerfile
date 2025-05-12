@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # Use imutable image tags rather than mutable tags (like ubuntu:22.04)
-FROM ubuntu:jammy-20250126
+FROM ubuntu:jammy-20250404
 
 # Some tools like yamllint need this
 # Pip needs this as well at the moment to install ansible
@@ -36,3 +36,4 @@ RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
     && find /usr -type d -name '*__pycache__' -prune -exec rm -rf {} \;
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+CMD ["/bin/bash"]
